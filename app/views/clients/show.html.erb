@@ -2,9 +2,8 @@
 
 <%= render @client %>
 
-<div>
-  <%= link_to "Edit this client", edit_client_path(@client) %> |
-  <%= link_to "Back to clients", clients_path %>
-
-  <%= button_to "Destroy this client", @client, method: :delete %>
+<div class="container">
+  <%= link_to "Editar cliente", edit_client_path(@client), class:"btn btn-primary"%>
+  <%= link_to "Volver a clientes", clients_path, class:"btn btn-primary"%>
+  <%= link_to "Borrar cliente", @client, method: :delete, class:"btn btn-primary" %>
 </div>

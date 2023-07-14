@@ -1,14 +1,29 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Clients</h1>
+<h1 class="mb-4">Listado de clientes y películas arrendadas</h1>
 
-<div id="clients">
-  <% @clients.each do |client| %>
-    <%= render client %>
-    <p>
-      <%= link_to "Show this client", client %>
-    </p>
-  <% end %>
+<div class="text-end mb-3">
+  <%= link_to "Registrar nuevo cliente", new_client_path, class: "btn btn-primary" %>
 </div>
 
-<%= link_to "New client", new_client_path %>
+
+<div id="clients" class="row">
+  <% @clients.each do |client| %>
+    <div class="col-md-4 mb-4">
+                <h5 class="card-title"><%= client.name %></h5>
+          <% if client.movies.count > 0  %>
+            <p class="font-weight-bold">Películas arrendadas:</p>
+            <ul class="list-group">
+              <% client.movies.each do |movie| %>
+                <li class="list-group-item"><%= movie.name %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p class="text-muted">No tiene películas arrendadas.</p>
+          <% end %>
+          <p>
+            <%= link_to "Mostrar cliente", client, class: "btn btn-primary btn-sm mt-3" %>
+          </p>
+    </div>
+  <% end %>
+</div>

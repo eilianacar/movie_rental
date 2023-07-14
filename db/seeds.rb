@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# Crear clientes
+10.times do
+  Client.create!(
+    name: Faker::Name.name,
+    age: Faker::Number.between(from: 18, to: 100)
+  )
+end
+
+# Crear registros de películas asociadas a clientes existentes
+100.times do
+  client = Client.all.sample
+  Movie.create!(
+    name: Faker::Movie.title,
+    client: client
+  )
+end

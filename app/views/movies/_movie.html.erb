@@ -1,12 +1,10 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Name:</strong>
-    <%= movie.name %>
-  </p>
-
-  <p>
-    <strong>Client:</strong>
-    <%= movie.client_id %>
-  </p>
-
+<div id="<%= dom_id movie  %>" class="container">
+  <div class="card">
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Name:</strong> <%= movie.name %></li>
+        <li class="list-group-item"><strong>Age:</strong> <%= movie.client.name %></li>
+      </ul>
+    </div>
+  </div>
 </div>

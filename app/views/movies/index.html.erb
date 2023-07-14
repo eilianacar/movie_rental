@@ -6,9 +6,9 @@
   <% @movies.each do |movie| %>
     <%= render movie %>
     <p>
-      <%= link_to "Show this movie", movie %>
+      <%= link_to "Mostrar pelicula", movie, class:"btn btn-primary" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
+<%= link_to "Nueva pelicula", new_movie_path, class:"btn btn-primary" %>
